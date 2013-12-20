@@ -1,7 +1,6 @@
 C Calculator
 ============
-
-Doel van de opdracht: Op een linux omgeving heb je niet altijd de mogelijk tot het gebruik van een GUI. Toch moet je dan in staat zijn om een werkend programma op te leveren. Om je een idee te geven wat je allemaal zou kunnen verwachten gaan we een klein C programmaatje schrijven.
+Op een linux omgeving heb je niet altijd de mogelijk tot het gebruik van een GUI. Toch moet je dan in staat zijn om een werkend programma op te leveren. Om je een idee te geven wat je allemaal zou kunnen verwachten gaan we een klein C programmaatje schrijven.
 
 Heb je weinig tot geen ervaring met C, dan kies een partner die hier ervaring mee heeft. Je mag medestudenten om advies vragen, zolang je maar weet waarom je dingen gedaan hebt.
 
