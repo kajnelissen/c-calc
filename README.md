@@ -41,6 +41,11 @@ De makefile moet de volgende targets hebben:
 * cp_calculator.c
 * makefile
 * cp_calculator binary
+ 
+Debug commands
+-----------
+* Debug: make clean cp_debug
+* Normaal: make clean cp_binary
 
 Testscripts
 -----------
