@@ -1,13 +1,4 @@
-#include < calculator.h>
-
-int main(int argc, char **argv)
-{
-        // check if we have the necessary argument
-        if (argc == 2)
-        {
-                
-        }
-}
+#include "calculator.h"
 
 int add(int getal1, int getal2)
 {
@@ -29,7 +20,7 @@ int div(int getal1, int getal2)
 	return getal1 / getal2;
 }
 
-void calculate(char[] string)
+void calculate(char string[])
 {
         // process input
 
