@@ -76,3 +76,9 @@ Maak 2 extra targets in de makefile, zodat zowel de cp_calculator als de src_cal
 * srv_calculator.c
 * nieuwe makefile.
 
+Git commands
+------------
+* Add: git add <file>
+* Commit: git commit -m "<bericht>"
+* Push: git push origin
+* Pull: git pull
