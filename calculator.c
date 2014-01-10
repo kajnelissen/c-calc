@@ -1,14 +1,5 @@
 #include < calculator.h>
 
-int main(int argc, char **argv)
-{
-        // check if we have the necessary argument
-        if (argc == 2)
-        {
-                
-        }
-}
-
 int add(int getal1, int getal2)
 {
 	return getal1 + getal2;
