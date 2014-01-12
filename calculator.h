@@ -1,5 +1,5 @@
-float add(int getal1, int getal2);
-float sub(int getal1, int getal2);
-float mul(int getal1, int getal2);
-float div(int getal1, int getal2);
-void calculate(char string[]);
+float oadd(float getal1, float getal2);
+float osub(float getal1, float getal2);
+float omul(float getal1, float getal2);
+float odiv(float getal1, float getal2);
+char *calculate(char string[]);
