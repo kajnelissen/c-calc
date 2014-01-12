@@ -7,10 +7,10 @@ void main(int argc, char *argv[])
 	{
 		char *input;
 		input = argv[1];
-		
+
 		char *result;
 		result = calculate(input);
 
-		printf("\n%s", result);
+		printf("%s", result);
 	}
 }
