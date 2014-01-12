@@ -46,22 +46,22 @@ char *calculate(char string[])
 	if ( strcmp(method, "ADD") == 0 )
 	{
 		answer = oadd(getal1, getal2);
-		n = sprintf(result, "%.5f + %.5f = %.5f", getal1, getal2, answer);
+		n = sprintf(result, "%.5f", answer);
 	}
 	else if (strcmp(method, "SUB") == 0 )
 	{
 		answer = osub(getal1, getal2);
-		n = sprintf(result, "%.5f - %.5f = %.5f", getal1, getal2, answer);
+		n = sprintf(result, "%.5f", answer);
 	}
 	else if (strcmp(method, "MUL") == 0)
 	{
 		answer = omul(getal1, getal2);
-		n = sprintf(result, "%.5f * %.5f = %.5f", getal1, getal2, answer);
+		n = sprintf(result, "%.5f", answer);
 	}
 	else if (strcmp(method, "DIV") == 0 )
 	{
 		answer = odiv(getal1, getal2);
-		n = sprintf(result, "%.5f : %.5f = %.5f", getal1, getal2, answer);
+		n = sprintf(result, "%.5f", answer);
 	}
 	else
 	{
