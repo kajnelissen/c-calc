@@ -14,7 +14,7 @@ cp_lib_binary: libcalc cp_calculator.o
 	${CC} -L${LIBPATH} -Wl,-rpath=${LIBPATH} -Wall -o cp_lib_binary cp_calculator.o -lcalc
 
 srv_binary: ${OBJS2}
-	${CC} -o srv_binary ${OBJS2}
+	${CC} -pthread -o srv_binary ${OBJS2}
 
 srv_debug: CFLAGS += -DDEBUG -g
 srv_debug: srv_binary

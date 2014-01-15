@@ -4,11 +4,26 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+#include <pthread.h>
 #include "calculator.h"
 
-#define PORT 1234
+#define PORT 9999
 
-int main() {
+void *calc(void *request_ptr)
+{
+	
+	/*char *result_ptr = (char *)result_ptr;
+	result_ptr = calculate(*result_ptr);
+	return NULL;*/
+
+	char *request = (char *)request_ptr;
+	char result = calculate(request);
+	return (void *) result;
+
+}
+
+int main()
+{
 
 	int socket_desc, connfd = 0;
 	int c, client_sock, read_size;
@@ -46,11 +61,22 @@ int main() {
 		return 1;
 	}
 
-	char *result;
+	pthread_t calc_thread;
+
+	//char result;
+	void *result;
 	while ( (read_size = recv(client_sock, client_msg, 2000, 0)) > 0 )
 	{	
-		result = calculate(client_msg);
-		write(client_sock, result, strlen(result));
+		if ( pthread_create(&calc_thread, NULL, calc, &client_msg) )
+		{
+			printf("Error creating thread.\n");
+			return 1;
+		}
+
+		pthread_join(calc_thread, &result);
+
+		//result = calculate(client_msg);
+		write(client_sock, client_msg, strlen(result));
 	}
 
 	return 0;
