@@ -4,8 +4,8 @@
 #test2: -4+2
 #test3: 4+-2
 #test4: -3+-1
-#test4: 0+-1
-#test4: 1+0
+#test5: 0+-1
+#test6: 1+0
 
 source color-echo.sh
 
