@@ -46,4 +46,18 @@ make cp_binary
 		cecho "0 : -2 = ${RESULT}" $red
 	fi
 
+	RESULT=$(./cp_binary "DIV 8 0")
+	if [ "${RESULT}" == "Can't divide by zero!" ]; then
+		cecho "8 : 0 = ${RESULT}" $green
+	else
+		cecho "8 : 0 = ${RESULT}" $red
+	fi
+
+	RESULT=$(./cp_binary "DIV -8 0")
+	if [ "${RESULT}" == "Can't divide by zero!" ]; then
+		cecho "-8 : 0 = ${RESULT}" $green
+	else
+		cecho "-8 : 0 = ${RESULT}" $red
+	fi
+
 make clean
