@@ -4,6 +4,8 @@
 #test2: -4+2
 #test3: 4+-2
 #test4: -3+-1
+#test4: 0+-1
+#test4: 1+0
 
 source color-echo.sh
 
@@ -35,6 +37,20 @@ make cp_binary
 		cecho "-3 + -1 = ${RESULT}" $green
 	else
 		cecho "-3 + -1 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "ADD 0 -1")
+	if [ "${RESULT}" == "-1.00000" ]; then
+		cecho "0 + -1 = ${RESULT}" $green
+	else
+		cecho "0 + -1 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "ADD 1 0")
+	if [ "${RESULT}" == "1.00000" ]; then
+		cecho "1 + 0 = ${RESULT}" $green
+	else
+		cecho "1 + 0 = ${RESULT}" $red
 	fi
 
 make clean
