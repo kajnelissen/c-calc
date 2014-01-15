@@ -36,5 +36,19 @@ make cp_binary
 	else
 	        cecho "-1 - -3 = ${RESULT}" $red
 	fi
+	
+	RESULT = $(./cp_binary "SUB 0 -1")
+	if [ "${RESULT}" == "1.00000" ]; then
+		cecho "0 - -1 = ${RESULT}" $green
+	else
+		cecho "0 - -1 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "SUB 1 0")
+	if [ "${RESULT}" == "1.00000" ]; then
+		cecho "1 - 0 = ${RESULT}" $green
+	else
+		cecho "1 - 0 = ${RESULT}" $red
+	fi
 
 make clean
