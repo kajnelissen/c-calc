@@ -5,30 +5,36 @@
 #test3: -2-4
 #test4: -1--3
 
-RESULT = cp_binary "SUB 5, 1"
-if [ "$RESULT" -eq 4 ]; then
-        echo &'Result is: ${RESULT}. Correct!/n'
-else
-        echo &'Result is: ${RESULT}. Incorrect!/n'
-fi
+source color-echo.sh
 
-RESULT = cp_binary "SUB 2, -4"
-if [ "$RESULT" -eq 6 ]; then
-        echo &'Result is: ${RESULT}. Correct!/n'
-else
-        echo &'Result is: ${RESULT}. Incorrect!/n'
-fi
+make cp_binary
 
-RESULT = cp_binary "SUB -2, 4"
-if [ "$RESULT" -eq -6 ]; then
-        echo &'Result is: ${RESULT}. Correct!/n'
-else
-        echo &'Result is: ${RESULT}. Incorrect!/n'
-fi
+	RESULT = $(./cp_binary "SUB 5 1")
+	if [ "${RESULT}" == "4.00000" ]; then
+	        cecho "5 - 1 = ${RESULT}" $green
+	else
+	        cecho "5 - 1 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "SUB 2 -4")
+	if [ "${RESULT}" == "6.00000" ]; then
+	        cecho "2 - -4 = ${RESULT}" $green
+	else
+	        cecho "2 - -4 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "SUB -2 4")
+	if [ "${RESULT}" == "-6.00000" ]; then
+	        cecho "-2 - 4 = ${RESULT}" $green
+	else
+	        cecho "-2 - 4 = ${RESULT}" $red
+	fi
+	
+	RESULT = $(./cp_binary "SUB -1 -3")
+	if [ "${RESULT}" == "2.00000" ]; then
+	        cecho "-1 - -3 = ${RESULT}" $green
+	else
+	        cecho "-1 - -3 = ${RESULT}" $red
+	fi
 
-RESULT = cp_binary "SUB -1, -3"
-if [ "$RESULT" -eq 2 ]; then
-        echo &'Result is: ${RESULT}. Correct!/n'
-else
-        echo &'Result is: ${RESULT}. Incorrect!/n'
-fi
+make clean
