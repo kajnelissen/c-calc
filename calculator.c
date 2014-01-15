@@ -60,8 +60,15 @@ char *calculate(char string[])
 	}
 	else if (strcmp(method, "DIV") == 0 )
 	{
-		answer = odiv(getal1, getal2);
-		n = sprintf(result, "%.5f", answer);
+		if ( getal2 == 0 )
+		{
+			result = "Can't divide by zero!";
+		}
+		else
+		{
+			answer = odiv(getal1, getal2);
+			n = sprintf(result, "%.5f", answer);
+		}
 	}
 	else
 	{
