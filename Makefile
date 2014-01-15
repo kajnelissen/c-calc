@@ -22,4 +22,4 @@ cp_calculator.o: cp_calculator.c calculator.h
 	${CC} ${CFLAGS} -c cp_calculator.c
 
 clean: 
-	rm -f *.o *.so cp_binary
+	rm -f *.o *.so cp_binary srv_binary
