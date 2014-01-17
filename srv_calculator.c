@@ -17,7 +17,10 @@ void *calc(void *request_ptr)
 	return NULL;*/
 
 	char *request = (char *)request_ptr;
-	char result = calculate(request);
+
+	char *result = malloc(sizeof(char) * 50);
+	result = calculate(request);
+
 	return (void *) result;
 
 }
@@ -76,7 +79,7 @@ int main()
 		pthread_join(calc_thread, &result);
 
 		//result = calculate(client_msg);
-		write(client_sock, client_msg, strlen(result));
+		write(client_sock, result, strlen(result));
 	}
 
 	return 0;
