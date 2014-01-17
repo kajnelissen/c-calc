@@ -4,6 +4,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <signal.h>
 #include "calculator.h"
 
 #define PORT 1234
@@ -47,10 +49,27 @@ int main() {
 	}
 
 	char *result;
+	pid_t pid;
 	while ( (read_size = recv(client_sock, client_msg, 2000, 0)) > 0 )
 	{	
-		result = calculate(client_msg);
-		write(client_sock, result, strlen(result));
+		pid = fork();
+		
+		if ( pid == 0 )
+		{
+			// executed by child process
+			result = calculate(client_msg);
+			write(client_sock, result, strlen(result));
+			exit(0);
+		}
+		else
+		{	
+			// parent process waits 2 seconds before killing child
+			sleep(2);
+			printf("Killed a child!");
+			kill(pid, SIGKILL);
+		}
+	
+		
 	}
 
 	return 0;
