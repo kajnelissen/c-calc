@@ -64,7 +64,7 @@ int main() {
 		else
 		{	
 			// parent process waits 2 seconds before killing child
-			sleep(2);
+			sleep(1);
 			printf("Killed a child!");
 			kill(pid, SIGKILL);
 		}
