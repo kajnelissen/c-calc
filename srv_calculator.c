@@ -12,10 +12,6 @@
 void *calc(void *request_ptr)
 {
 	
-	/*char *result_ptr = (char *)result_ptr;
-	result_ptr = calculate(*result_ptr);
-	return NULL;*/
-
 	char *request = (char *)request_ptr;
 
 	char *result = malloc(sizeof(char) * 50);
@@ -66,7 +62,6 @@ int main()
 
 	pthread_t calc_thread;
 
-	//char result;
 	void *result;
 	while ( (read_size = recv(client_sock, client_msg, 2000, 0)) > 0 )
 	{	
